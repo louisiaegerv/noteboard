@@ -1,0 +1,146 @@
+$sticky-note: #ececa8;
+$footer-color: #fff;
+$footer-shadow: #333;
+$lobster: 'Lobster', cursive;
+$btn-clr: rgba(51, 51, 51, 1);
+$btn-hvr: rgba(51, 51, 51, .6);
+
+html, body {
+  margin: 0;
+}
+
+body {
+  background: url("../assets/img/corkTileBig.jpg");
+  text-align: center;
+}
+
+.title {
+  color: #FFF;
+  font-size: 8vmin;
+  text-shadow: 3px 3px 3px #333;
+  font-family: $lobster;
+}
+
+#note {
+  resize: vertical;
+  display: block; 
+  margin: auto;
+  width: 300px;
+  height: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.37);
+}
+
+.btn {
+  padding: 10px 50px;
+  border-radius: 3px; 
+  //color: $sticky-note;
+  color: #fff;
+  background: $btn-clr;
+  text-decoration: none;
+  border: none;
+  margin-top: 13px;
+  font-size: 2vmin;
+  font-family: sans-serif;
+  border: 2px solid transparent;
+  transition: .5s;
+}
+.btn:hover {
+  cursor: pointer;
+  border: 2px solid #333;
+  box-shadow: 4px 4px 10px rgba(0,0,0, .5);
+  transition: .3s;
+}
+
+.btn:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  transition: .3s;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.noteSpace {
+  margin-top: 40px; 
+  max-width: 1560px;
+  margin: 50px auto 200px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  background: $sticky-note;
+  padding: 20px;
+  width: 200px;
+  min-height: 150px;
+  display: inline-block;
+  text-align: left;
+  //transition: all .5s;
+  box-shadow: 3px 3px 3px transparent;
+  margin: 10px 30px;  
+}
+
+li:hover {
+  //box-shadow: 4px 4px 8px #333;
+  //transition: .3s;
+  cursor: move;
+}
+
+.footer p {
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  text-shadow: 2px 2px 2px $footer-shadow; 
+  color: $footer-color;
+  font-size: 2vmin;
+}
+
+
+
+//Button Hover effect
+ /* Ripple Out */
+@-webkit-keyframes ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@keyframes ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+.ripple-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+}
+.ripple-out:before {
+  content: '';
+  position: absolute;
+  border: #333 solid 6px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.ripple-out:hover:before, .ripple-out:active:before {
+  -webkit-animation-name: ripple-out;
+  animation-name: ripple-out;
+}
