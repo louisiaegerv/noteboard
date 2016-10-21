@@ -12,6 +12,7 @@ var main = function() {
     if(noteText !== "") {
       var html = $('<li>').text(noteText);
       $(html).prependTo('.noteSpace'); 
+      $('#note').val('');
       $('li').draggable();     
     }
   
